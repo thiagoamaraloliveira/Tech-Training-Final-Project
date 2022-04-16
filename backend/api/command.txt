@@ -1,0 +1,16 @@
+Create
+npx sequelize-cli model:create --name Devices --attributes Name:string,Category:string,Color:string,PartNumber:integer
+npx sequelize-cli model:create --name Category --attributes Name:string
+
+
+Migration
+npx sequelize-cli db:migrate
+
+
+SQL 
+create table nome;
+show tables;
+use name;
+show table nome;
+
+insert into Devices (Category,Color,PartNumber,createdAt,updatedAt) values ("CellPhone","white","001592",NOW(),NOW());

@@ -6,30 +6,30 @@ module.exports = {
       "Devices",
       [
         {
-          Category: "PC",
-          Color: "gold",
+          Name: "Smartphone Samsung Galaxy M12",
+          Color: "blue",
           PartNumber: 1103,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          Category: "SmartPhone",
+          Name: "iPhone 11",
           Color: "black",
-          PartNumber: 1099,
+          PartNumber: 2561,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          Category: "PC",
-          Color: "silver",
-          PartNumber: 2563,
+          Name: "Smart TV HD LED 32 LG",
+          Color: "black",
+          PartNumber: 5103,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          Category: "Cam",
-          Color: "grey",
-          PartNumber: 9410,
+          Name: "Smart TV 43” Full HD LED LG",
+          Color: "blue",
+          PartNumber: 5131,
           createdAt: new Date(),
           updatedAt: new Date()
         },

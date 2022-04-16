@@ -1,6 +1,7 @@
 Create
-npx sequelize-cli model:create --name Devices --attributes Name:string,Category:string,Color:string,PartNumber:integer
-npx sequelize-cli model:create --name Category --attributes Name:string
+npx sequelize-cli model:create --name Users --attributes User:string,Password:string
+npx sequelize-cli model:create --name Categories --attributes Name:string
+npx sequelize-cli model:create --name Devices --attributes Name:string,Color:string,PartNumber:integer
 
 
 Migration
@@ -9,7 +10,10 @@ px sequelize-cli db:migrate:undo  //rowback - volta a última migração
 db:migrate:undo --name [data-hora]-create-[nome-da-tabela].js  // de um arquivo especifico
 
 Seeders
+npx sequelize-cli seed:generate --name demo-users
+npx sequelize-cli seed:generate --name demo-categories
 npx sequelize-cli seed:generate --name demo-devices
+
 
 Send Seeders
 npx sequelize-cli db:seed:all 

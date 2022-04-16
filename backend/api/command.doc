@@ -1,0 +1,1 @@
+npx sequelize-cli model:create --name Devices --attributes Category:string,Color:string,PartNumber:integer

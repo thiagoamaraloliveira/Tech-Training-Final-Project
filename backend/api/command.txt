@@ -5,6 +5,17 @@ npx sequelize-cli model:create --name Category --attributes Name:string
 
 Migration
 npx sequelize-cli db:migrate
+px sequelize-cli db:migrate:undo  //rowback - volta a última migração
+db:migrate:undo --name [data-hora]-create-[nome-da-tabela].js  // de um arquivo especifico
+
+Seeders
+npx sequelize-cli seed:generate --name demo-devices
+
+Send Seeders
+npx sequelize-cli db:seed:all 
+npx sequelize db:seed:undo //rowback - volta a última seed
+npx sequelize-cli db:seed:undo --seed nome-do-arquivo // -volta uma seed específica
+npx sequelize-cli db:seed:undo:all  // -volta todas as seeds
 
 
 SQL 

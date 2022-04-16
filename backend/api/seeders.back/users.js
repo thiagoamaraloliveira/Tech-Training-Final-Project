@@ -6,25 +6,25 @@ module.exports = {
       "Users",
       [
         {
-          User: "admin",
+          Name: "admin",
           Password:"admin",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          User: "Pedro.ao",
+          Name: "Pedro.ao",
           Password:"123456",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          User: "Maria.sj",
+          Name: "Maria.sj",
           Password:"123456",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          User: "Jose.rs",
+          Name: "Jose.rs",
           Password:"123456",
           createdAt: new Date(),
           updatedAt: new Date(),

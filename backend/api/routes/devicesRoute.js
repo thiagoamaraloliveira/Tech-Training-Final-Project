@@ -8,5 +8,6 @@ router.get("/devices/:id", DeviceController.getDevice);
 router.post("/devices", DeviceController.createDevice);
 router.put("/devices/:id", DeviceController.updateDevice);
 router.delete("/devices/:id", DeviceController.deleteDevice);
+router.post("/devices/:id/restore", DeviceController.restoreDevice);
 
 module.exports = router;

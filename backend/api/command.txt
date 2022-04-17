@@ -24,8 +24,11 @@ npx sequelize-cli db:seed:undo:all  // -volta todas as seeds
 
 SQL 
 create table nome;
+show databases;
+use nome;
 show tables;
 use name;
 show table nome;
+describe nome;
 
 insert into Devices (Category,Color,PartNumber,createdAt,updatedAt) values ("CellPhone","white","001592",NOW(),NOW());

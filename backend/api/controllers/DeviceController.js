@@ -1,9 +1,9 @@
-const database = require("../models");
-
+const { DevicesServices } = require("../services");
+const deviceServices = new DevicesServices();
 class DeviceController {
   static async getAllDevices(req, res) {
     try {
-      const allDevices = await database.Devices.findAll();
+      const allDevices = await deviceServices.getAllRegisters();
       return res.status(200).json(allDevices);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -13,9 +13,7 @@ class DeviceController {
   static async getDevice(req, res) {
     const { id } = req.params;
     try {
-      const device = await database.Devices.findOne({
-        where: { id: Number(id) },
-      });
+      const device = await deviceServices.getOneRegister(id);
       return res.status(200).json(device);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -25,7 +23,7 @@ class DeviceController {
   static async createDevice(req, res) {
     const newDevice = req.body;
     try {
-      const newDeviceCreated = await database.Devices.create(newDevice);
+      const newDeviceCreated = await deviceServices.createRegister(newDevice);
       return res.status(200).json(newDeviceCreated);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -37,12 +35,8 @@ class DeviceController {
     const newInfoDevice = req.body;
 
     try {
-      await database.Devices.update(newInfoDevice, {
-        where: { id: Number(id) },
-      });
-      const updatedDevice = await database.Devices.findOne({
-        where: { id: Number(id) },
-      });
+      await deviceServices.updateRegister(newInfoDevice, id);
+      const updatedDevice = await deviceServices.getOneRegister(id);
       return res.status(200).json(updatedDevice);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -52,10 +46,8 @@ class DeviceController {
   static async deleteDevice(req, res) {
     const { id } = req.params;
     try {
-      await database.Devices.destroy({
-        where: { id: Number(id) },
-      });
-      return res.status(200).json({message:`id ${id} deleted`});
+      await deviceServices.deleteRegister(id);
+      return res.status(200).json({ message: `id ${id} deleted` });
     } catch (error) {
       return res.status(500).json(error.message);
     }
@@ -64,8 +56,8 @@ class DeviceController {
   static async restoreDevice(req, res) {
     const { id } = req.params;
     try {
-      await database.Devices.restore({ where: { id: Number(id) } });
-      return res.status(200).json({message: `id ${id} restored`})
+      await deviceServices.restoreRegister(id);
+      return res.status(200).json({ message: `id ${id} restored` });
     } catch (error) {
       return res.status(500).json(error.message);
     }

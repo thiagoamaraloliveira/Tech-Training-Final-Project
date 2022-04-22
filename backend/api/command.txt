@@ -6,7 +6,7 @@ npx sequelize-cli model:create --name Devices --attributes Name:string,Color:str
 
 Migration
 npx sequelize-cli db:migrate
-px sequelize-cli db:migrate:undo  //rowback - volta a última migração
+npx sequelize-cli db:migrate:undo  //rowback - volta a última migração
 db:migrate:undo --name [data-hora]-create-[nome-da-tabela].js  // de um arquivo especifico
 
 Seeders

@@ -27,4 +27,14 @@ export class DeviceService {
   read(): Observable<Device[]> {
     return this.http.get<Device[]>(this.baseUrl);
   }
+
+  readById(id: string): Observable<Device> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Device>(url);
+  }
+
+  update(device: Device): Observable<Device> {
+    const url = `${this.baseUrl}/${device.id}`;
+    return this.http.put<Device>(url, device);
+  }
 }

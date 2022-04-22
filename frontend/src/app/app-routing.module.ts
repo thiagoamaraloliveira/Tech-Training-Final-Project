@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./views/home/home.component";
 import { DeviceComponent } from "./views/device/device.component";
 import { DeviceCreateComponent } from "./components/device/device-create/device-create.component";
+import { DeviceUpdateComponent } from "./components/device/device-update/device-update.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "devices/create",
     component: DeviceCreateComponent,
+  },
+  {
+    path: "devices/update/:id",
+    component: DeviceUpdateComponent,
   },
 ];
 

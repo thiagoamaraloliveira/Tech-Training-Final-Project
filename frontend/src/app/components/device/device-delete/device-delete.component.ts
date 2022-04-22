@@ -4,12 +4,13 @@ import { Device } from "../device.model";
 import { DeviceService } from "../device.service";
 
 @Component({
-  selector: "app-device-update",
-  templateUrl: "./device-update.component.html",
-  styleUrls: ["./device-update.component.css"],
+  selector: "app-device-delete",
+  templateUrl: "./device-delete.component.html",
+  styleUrls: ["./device-delete.component.css"],
 })
-export class DeviceUpdateComponent implements OnInit {
+export class DeviceDeleteComponent implements OnInit {
   device: Device = {
+    id: 1,
     name: "",
     color: "",
     partNumber: "",
@@ -29,9 +30,9 @@ export class DeviceUpdateComponent implements OnInit {
     });
   }
 
-  updateDevice(): void {
-    this.deviceService.update(this.device).subscribe(() => {
-      this.deviceService.showMessage("Produto atualizado com sucesso!");
+  deleteDevice(): void {
+    this.deviceService.delete(this.device.id).subscribe(() => {
+      this.deviceService.showMessage("Dispositivo excluído com sucesso!");
       this.router.navigate(["/devices"]);
     });
   }

@@ -28,6 +28,7 @@ import { DeviceComponent } from "./views/device/device.component";
 import { DeviceCreateComponent } from "./components/device/device-create/device-create.component";
 import { DeviceReadComponent } from "./components/device/device-read/device-read.component";
 import { DeviceUpdateComponent } from './components/device/device-update/device-update.component';
+import { DeviceDeleteComponent } from './components/device/device-delete/device-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { DeviceUpdateComponent } from './components/device/device-update/device-
     DeviceCreateComponent,
     DeviceReadComponent,
     DeviceUpdateComponent,
+    DeviceDeleteComponent,
   ],
   imports: [
     BrowserModule,

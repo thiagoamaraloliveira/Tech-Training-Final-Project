@@ -1,49 +1,54 @@
 <mat-card>
-  <mat-card-title> Alterar Dispositivo </mat-card-title>
+  <mat-card-title> Excluir Dispositivo </mat-card-title>
   <form>
     <mat-form-field>
       <input
         matInput
         placeholder="Nome"
-        [(ngModel)]="device.name"
+        [value]="device.name"
         name="name"
+        disabled
       />
     </mat-form-field>
     <mat-form-field>
       <input
         matInput
         placeholder="Cor"
-        [(ngModel)]="device.color"
+        [value]="device.color"
         name="color"
+        disabled
       />
     </mat-form-field>
     <mat-form-field>
       <input
         matInput
         placeholder="Número de Série"
-        [(ngModel)]="device.partNumber"
+        [value]="device.partNumber"
         name="partNumber"
+        disabled
       />
     </mat-form-field>
     <mat-form-field>
       <input
         matInput
         placeholder="Usuário"
-        [(ngModel)]="device.userId"
+        [value]="device.userId"
         name="userId"
+        disabled
       />
     </mat-form-field>
     <mat-form-field>
       <input
         matInput
         placeholder="Categoria"
-        [(ngModel)]="device.categoryId"
+        [value]="device.categoryId"
         name="categoryId"
+        disabled
       />
     </mat-form-field>
   </form>
-  <button mat-raised-button (click)="updateDevice()" color="primary">
-    Atualizar
+  <button mat-raised-button (click)="deleteDevice()" color="warn">
+    Excluir
   </button>
 
   <button mat-raised-button (click)="cancel()">Cancelar</button>

@@ -1,5 +1,5 @@
 export interface Device {
-  id?: number;
+  id?: number | undefined;
   name: string;
   color: string;
   partNumber: string | null;

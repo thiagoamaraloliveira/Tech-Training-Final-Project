@@ -1,5 +1,50 @@
-<button mat-raised-button (click)="createDevice()" color="primary">
-  Salvar
-</button>
+<mat-card>
+  <mat-card-title> Novo Dispositivo </mat-card-title>
+  <form>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Nome"
+        [(ngModel)]="device.name"
+        name="name"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Cor"
+        [(ngModel)]="device.color"
+        name="color"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Número de Série"
+        [(ngModel)]="device.partNumber"
+        name="partNumber"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Usuário"
+        [(ngModel)]="device.userId"
+        name="userId"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Categoria"
+        [(ngModel)]="device.categoryId"
+        name="categoryId"
+      />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="createDevice()" color="primary">
+    Salvar
+  </button>
 
-<button mat-raised-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button (click)="cancel()">Cancelar</button>
+</mat-card>

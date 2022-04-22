@@ -12,14 +12,21 @@ import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatTableModule } from "@angular/material/table";
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
 
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
 
 import { FooterComponent } from "./components/template/footer/footer.component";
 import { NavComponent } from "./components/template/nav/nav.component";
 import { HomeComponent } from "./views/home/home.component";
 import { DeviceComponent } from "./views/device/device.component";
 import { DeviceCreateComponent } from "./components/device/device-create/device-create.component";
+import { DeviceReadComponent } from "./components/device/device-read/device-read.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +36,7 @@ import { DeviceCreateComponent } from "./components/device/device-create/device-
     HomeComponent,
     DeviceComponent,
     DeviceCreateComponent,
+    DeviceReadComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +49,12 @@ import { DeviceCreateComponent } from "./components/device/device-create/device-
     MatButtonModule,
     MatSnackBarModule,
     HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

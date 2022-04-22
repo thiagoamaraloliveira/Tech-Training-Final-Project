@@ -10,11 +10,11 @@ import { Device } from "../device.model";
 })
 export class DeviceCreateComponent implements OnInit {
   device: Device = {
-    Name: "",
-    Color: "",
-    PartNumber: "",
-    UserId: null,
-    CategoryId: null,
+    name: "",
+    color: "",
+    partNumber: "",
+    userId: null,
+    categoryId: null,
   };
 
   constructor(private deviceService: DeviceService, private router: Router) {}

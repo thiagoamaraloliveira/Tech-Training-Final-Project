@@ -23,4 +23,8 @@ export class DeviceService {
   create(device: Device): Observable<Device> {
     return this.http.post<Device>(this.baseUrl, device);
   }
+
+  read(): Observable<Device[]> {
+    return this.http.get<Device[]>(this.baseUrl);
+  }
 }

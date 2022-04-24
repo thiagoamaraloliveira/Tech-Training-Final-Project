@@ -31,6 +31,7 @@ import { DeviceUpdateComponent } from "./components/device/device-update/device-
 import { AuthenticationComponent } from "./views/authentication/authentication.component";
 import { DeviceDeleteComponent } from "./components/device/device-delete/device-delete.component";
 import { LoginComponent } from "./components/login/login/login.component";
+import { HomeInfoComponent } from './components/home/home-info/home-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +46,7 @@ import { LoginComponent } from "./components/login/login/login.component";
     DeviceDeleteComponent,
     AuthenticationComponent,
     LoginComponent,
+    HomeInfoComponent,
   ],
   imports: [
     BrowserModule,

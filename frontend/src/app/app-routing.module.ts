@@ -9,12 +9,17 @@ import { DeviceDeleteComponent } from "./components/device/device-delete/device-
 import { AuthenticationComponent } from "./views/authentication/authentication.component";
 import { AuthGuard } from "./views/authentication/auth.guard";
 import { LoginComponent } from "./components/login/login/login.component";
+import { HomeInfoComponent } from "./components/home/home-info/home-info.component";
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
     children: [
+      {
+        path: "",
+        component: HomeInfoComponent,
+      },
       {
         path: "devices",
         component: DeviceComponent,
@@ -26,10 +31,6 @@ const routes: Routes = [
       {
         path: "devices/update/:id",
         component: DeviceUpdateComponent,
-      },
-      {
-        path: "devices/delete/:id",
-        component: DeviceDeleteComponent,
       },
       {
         path: "devices/delete/:id",

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Device } from "../device.model";
-import { DeviceService } from "../device.service";
+import { Device } from "../../../models/device.model";
+import { DeviceService } from "../../../services/device.service";
 
 @Component({
   selector: "app-device-read",

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { HeaderService } from "src/app/components/template/header/header.service";
+import { HeaderService } from "src/app/services/header.service";
+
 
 @Component({
   selector: "app-device",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Device } from "../device.model";
-import { DeviceService } from "../device.service";
+import { Device } from "../../../models/device.model";
+import { DeviceService } from "../../../services/device.service";
 
 @Component({
   selector: "app-device-update",

@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
-import { HeaderData } from "./header-data.model";
+
 import { BehaviorSubject } from "rxjs";
+import { HeaderData } from "../models/header-data.model";
 
 @Injectable({
   providedIn: "root",

@@ -19,6 +19,6 @@ export class DeviceComponent implements OnInit {
 
   ngOnInit(): void {}
   navigateToDeviceCreate(): void {
-    this.router.navigate(["/devices/create"]);
+    this.router.navigateByUrl("/devices/create");
   }
 }

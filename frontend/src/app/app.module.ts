@@ -27,8 +27,10 @@ import { HomeComponent } from "./views/home/home.component";
 import { DeviceComponent } from "./views/device/device.component";
 import { DeviceCreateComponent } from "./components/device/device-create/device-create.component";
 import { DeviceReadComponent } from "./components/device/device-read/device-read.component";
-import { DeviceUpdateComponent } from './components/device/device-update/device-update.component';
-import { DeviceDeleteComponent } from './components/device/device-delete/device-delete.component';
+import { DeviceUpdateComponent } from "./components/device/device-update/device-update.component";
+import { AuthenticationComponent } from "./views/authentication/authentication.component";
+import { DeviceDeleteComponent } from "./components/device/device-delete/device-delete.component";
+import { LoginComponent } from "./components/login/login/login.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,8 @@ import { DeviceDeleteComponent } from './components/device/device-delete/device-
     DeviceReadComponent,
     DeviceUpdateComponent,
     DeviceDeleteComponent,
+    AuthenticationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

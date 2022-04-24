@@ -32,11 +32,11 @@ export class DeviceUpdateComponent implements OnInit {
   updateDevice(): void {
     this.deviceService.update(this.device).subscribe(() => {
       this.deviceService.showMessage("Produto atualizado com sucesso!");
-      this.router.navigate(["/devices"]);
+      this.router.navigateByUrl("/devices");
     });
   }
 
   cancel(): void {
-    this.router.navigate(["/devices"]);
+    this.router.navigateByUrl("/devices");
   }
 }

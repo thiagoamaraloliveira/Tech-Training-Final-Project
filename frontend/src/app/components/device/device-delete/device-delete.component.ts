@@ -33,11 +33,11 @@ export class DeviceDeleteComponent implements OnInit {
   deleteDevice(): void {
     this.deviceService.delete(this.device.id).subscribe(() => {
       this.deviceService.showMessage("Dispositivo excluído com sucesso!");
-      this.router.navigate(["/devices"]);
+      this.router.navigateByUrl("/devices");
     });
   }
 
   cancel(): void {
-    this.router.navigate(["/devices"]);
+    this.router.navigateByUrl("/devices");
   }
 }

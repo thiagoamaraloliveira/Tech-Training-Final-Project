@@ -6,27 +6,52 @@ import { DeviceComponent } from "./views/device/device.component";
 import { DeviceCreateComponent } from "./components/device/device-create/device-create.component";
 import { DeviceUpdateComponent } from "./components/device/device-update/device-update.component";
 import { DeviceDeleteComponent } from "./components/device/device-delete/device-delete.component";
+import { AuthenticationComponent } from "./views/authentication/authentication.component";
+import { AuthGuard } from "./views/authentication/auth.guard";
+import { LoginComponent } from "./components/login/login/login.component";
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
+    children: [
+      {
+        path: "devices",
+        component: DeviceComponent,
+      },
+      {
+        path: "devices/create",
+        component: DeviceCreateComponent,
+      },
+      {
+        path: "devices/update/:id",
+        component: DeviceUpdateComponent,
+      },
+      {
+        path: "devices/delete/:id",
+        component: DeviceDeleteComponent,
+      },
+      {
+        path: "devices/delete/:id",
+        component: DeviceDeleteComponent,
+      },
+    ],
+    canActivate: [AuthGuard]
   },
   {
-    path: "devices",
-    component: DeviceComponent,
-  },
-  {
-    path: "devices/create",
-    component: DeviceCreateComponent,
-  },
-  {
-    path: "devices/update/:id",
-    component: DeviceUpdateComponent,
-  },
-  {
-    path: "devices/delete/:id",
-    component: DeviceDeleteComponent,
+    path: "",
+    component:AuthenticationComponent ,
+    children:[
+      {
+        path:"",
+        redirectTo: "login",
+        pathMatch:"full"
+      },
+      {
+        path:"login",
+        component:LoginComponent
+      }
+    ]
   },
 ];
 

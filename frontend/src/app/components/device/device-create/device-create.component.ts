@@ -24,11 +24,11 @@ export class DeviceCreateComponent implements OnInit {
   createDevice() {
     this.deviceService.create(this.device).subscribe(() => {
       this.deviceService.showMessage("Dispositivo cadastrado!");
-      this.router.navigate(["/devices"]);
+      this.router.navigateByUrl("/devices");
     });
   }
 
   cancel() {
-    this.router.navigate(["/devices"]);
+    this.router.navigateByUrl("/devices");
   }
 }

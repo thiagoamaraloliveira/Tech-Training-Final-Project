@@ -1,6 +1,12 @@
 const { UsersServices } = require("../services");
 const userServices = new UsersServices();
+const bcrypt = require("bcrypt-nodejs");
 class UserController {
+  static encryptPassword = (password) => {
+    const salt = bcrypt.genSaltSync(10);
+    return bcrypt.hashSync(password, salt);
+  };
+
   static async getAllUsers(req, res) {
     try {
       const allUsers = await userServices.getAllRegisters();
@@ -22,6 +28,7 @@ class UserController {
 
   static async createUser(req, res) {
     const newUser = req.body;
+    newUser.password = UserController.encryptPassword(newUser.password);
     try {
       const newUserCreated = await userServices.createRegister(newUser);
       return res.status(200).json(newUserCreated);

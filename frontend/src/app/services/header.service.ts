@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 
 import { BehaviorSubject } from "rxjs";
-import { HeaderData } from "../models/header-data.model";
+import { IHeaderData } from "../models/header-data.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class HeaderService {
-  private _headerData = new BehaviorSubject<HeaderData>({
+  private _headerData = new BehaviorSubject<IHeaderData>({
     title: "Início",
     icon: "home",
     routeUrl: "",
@@ -15,11 +15,11 @@ export class HeaderService {
 
   constructor() {}
 
-  get headerData(): HeaderData {
+  get headerData(): IHeaderData {
     return this._headerData.value;
   }
 
-  set headerData(HeaderData: HeaderData) {
+  set headerData(HeaderData: IHeaderData) {
     this._headerData.next(HeaderData);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Device } from "../../../models/device.model";
+import { IDevice } from "../../../models/device.model";
 import { DeviceService } from "../../../services/device.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { DeviceService } from "../../../services/device.service";
   styleUrls: ["./device-update.component.css"],
 })
 export class DeviceUpdateComponent implements OnInit {
-  device: Device = {
+  device: IDevice = {
     name: "",
     color: "",
     partNumber: "",

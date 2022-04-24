@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Device } from "../../../models/device.model";
+import { IDevice } from "../../../models/device.model";
 import { DeviceService } from "../../../services/device.service";
 
 @Component({
@@ -8,7 +8,7 @@ import { DeviceService } from "../../../services/device.service";
   styleUrls: ["./device-read.component.css"],
 })
 export class DeviceReadComponent implements OnInit {
-  devices: Device[] = [];
+  devices: IDevice[] = [];
   displayedColums = [
     "id",
     "name",

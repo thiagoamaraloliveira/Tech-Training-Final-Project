@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Device } from "../../../models/device.model";
+import { IDevice } from "../../../models/device.model";
 import { DeviceService } from "../../../services/device.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { DeviceService } from "../../../services/device.service";
   styleUrls: ["./device-delete.component.css"],
 })
 export class DeviceDeleteComponent implements OnInit {
-  device: Device = {
+  device: IDevice = {
     id: 1,
     name: "",
     color: "",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DeviceService } from "../../../services/device.service";
 import { Router } from "@angular/router";
-import { Device } from "../../../models/device.model";
+import { IDevice } from "../../../models/device.model";
 
 @Component({
   selector: "app-device-create",
@@ -9,7 +9,7 @@ import { Device } from "../../../models/device.model";
   styleUrls: ["./device-create.component.css"],
 })
 export class DeviceCreateComponent implements OnInit {
-  device: Device = {
+  device: IDevice = {
     name: "",
     color: "",
     partNumber: "",

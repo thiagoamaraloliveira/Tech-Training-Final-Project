@@ -1,4 +1,4 @@
-export interface Device {
+export interface IDevice {
   id?: number | undefined;
   name: string;
   color: string;

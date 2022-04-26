@@ -8,15 +8,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Devices.belongsTo(models.Users, { foreignKey: "UserId" });
-      Devices.belongsTo(models.Categories, { foreignKey: "CategoryId" });
+      Devices.belongsTo(models.Users, { foreignKey: "userId" });
+      Devices.belongsTo(models.Categories, { foreignKey: "categoryId" });
     }
   }
   Devices.init(
     {
-      Name: DataTypes.STRING,
-      Color: DataTypes.STRING,
-      PartNumber: DataTypes.INTEGER,
+      name: DataTypes.STRING,
+      color: DataTypes.STRING,
+      partNumber: DataTypes.INTEGER,
     },
     {
       sequelize,

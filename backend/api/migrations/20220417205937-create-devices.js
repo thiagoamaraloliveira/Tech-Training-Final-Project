@@ -8,24 +8,24 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      Name: {
+      name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Color: {
+      color: {
         type: Sequelize.STRING(16),
         allowNull: false,
       },
-      PartNumber: {
+      partNumber: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      UserId: {
+      userId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: "Users", key: "id" },
       },
-      CategoryId: {
+      categoryId: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: "Categories", key: "id" },

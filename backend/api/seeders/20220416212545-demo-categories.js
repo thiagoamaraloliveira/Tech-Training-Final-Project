@@ -6,12 +6,12 @@ module.exports = {
       "Categories",
       [
         {
-          Name: "SmartPhone",
+          name: "SmartPhone",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          Name: "SmartTv",
+          name: "SmartTv",
           createdAt: new Date(),
           updatedAt: new Date(),
         }

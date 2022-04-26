@@ -14,9 +14,8 @@ export class DeviceReadComponent implements OnInit {
     "name",
     "color",
     "partNumber",
-    "userId",
     "categoryId",
-    "action"
+    "action",
   ];
 
   constructor(private deviceService: DeviceService) {}

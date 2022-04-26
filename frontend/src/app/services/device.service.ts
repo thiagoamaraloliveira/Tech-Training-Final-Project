@@ -4,6 +4,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { EMPTY, Observable } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { environment } from "src/environments/environment";
+import { ICategory } from "../models/category.model ";
 import { IDevice } from "../models/device.model";
 
 @Injectable({
@@ -30,6 +31,13 @@ export class DeviceService {
 
   read(): Observable<IDevice[]> {
     return this.http.get<IDevice[]>(`${environment.api}/devices`).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+  
+  readCategories(): Observable<ICategory[]> {
+    return this.http.get<ICategory[]>(`${environment.api}/categories`).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );

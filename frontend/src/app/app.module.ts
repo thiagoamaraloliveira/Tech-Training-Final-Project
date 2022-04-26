@@ -17,6 +17,7 @@ import { MatInputModule } from "@angular/material/input";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatSortModule } from "@angular/material/sort";
+import { MatSelectModule } from "@angular/material/select";
 
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
@@ -31,7 +32,7 @@ import { DeviceUpdateComponent } from "./components/device/device-update/device-
 import { AuthenticationComponent } from "./views/authentication/authentication.component";
 import { DeviceDeleteComponent } from "./components/device/device-delete/device-delete.component";
 import { LoginComponent } from "./components/login/login/login.component";
-import { HomeInfoComponent } from './components/home/home-info/home-info.component';
+import { HomeInfoComponent } from "./components/home/home-info/home-info.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +66,7 @@ import { HomeInfoComponent } from './components/home/home-info/home-info.compone
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

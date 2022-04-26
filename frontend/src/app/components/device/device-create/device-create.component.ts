@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DeviceService } from "../../../services/device.service";
 import { Router } from "@angular/router";
 import { IDevice } from "../../../models/device.model";
+import { ICategoryOptions } from "src/app/models/category.model ";
 
 @Component({
   selector: "app-device-create",
@@ -17,9 +18,17 @@ export class DeviceCreateComponent implements OnInit {
     categoryId: null,
   };
 
+  categories: ICategoryOptions[] = [];
+
   constructor(private deviceService: DeviceService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.deviceService.readCategories().subscribe((categories) => {
+      categories.map((category) => {
+        this.categories.push({ name: category.name, id: category.id });
+      });
+    });
+  }
 
   createDevice() {
     this.deviceService.create(this.device).subscribe(() => {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ICategoryOptions } from "src/app/models/category.model ";
 import { IDevice } from "../../../models/device.model";
 import { DeviceService } from "../../../services/device.service";
 
@@ -19,6 +20,10 @@ export class DeviceUpdateComponent implements OnInit {
       name: "",
     },
   };
+
+  selectedOption: number | null = 0;
+
+  categories: ICategoryOptions[] = [];
   constructor(
     private deviceService: DeviceService,
     private router: Router,
@@ -29,7 +34,17 @@ export class DeviceUpdateComponent implements OnInit {
     const id: string = this.route.snapshot.paramMap.get("id") ?? "";
     this.deviceService.readById(id).subscribe((device) => {
       this.device = device;
+      this.selectedOption = device.categoryId;
     });
+
+    this.deviceService.readCategories().subscribe((categories) => {
+      categories.map((category) => {
+        this.categories.push({ name: category.name, id: category.id });
+      });
+    });
+  }
+  onChangeCategory(choosedCategory: any): void {
+    this.device = { ...this.device, categoryId: choosedCategory.value };
   }
 
   updateDevice(): void {

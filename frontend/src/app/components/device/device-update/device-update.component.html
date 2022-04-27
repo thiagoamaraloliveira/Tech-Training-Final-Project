@@ -26,12 +26,20 @@
       />
     </mat-form-field>
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Categoria"
-        [(ngModel)]="device.Category!.name"
-        name="categoryId"
-      />
+      <mat-label>Categoria</mat-label>
+      <mat-select
+        #choosedCategory
+        (valueChange)="onChangeCategory(choosedCategory)"
+        [(value)]="selectedOption"
+      >
+        <mat-option
+          *ngFor="let category of categories"
+          name="categoryId"
+          [value]="category.id"
+        >
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </form>
   <button mat-raised-button (click)="updateDevice()" color="primary">

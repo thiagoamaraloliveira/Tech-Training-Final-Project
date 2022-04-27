@@ -33,6 +33,11 @@ import { AuthenticationComponent } from "./views/authentication/authentication.c
 import { DeviceDeleteComponent } from "./components/device/device-delete/device-delete.component";
 import { LoginComponent } from "./components/login/login/login.component";
 import { HomeInfoComponent } from "./components/home/home-info/home-info.component";
+import { CategoryCreateComponent } from './components/category/category-create/category-create.component';
+import { CategoryDeleteComponent } from './components/category/category-delete/category-delete.component';
+import { CategoryReadComponent } from './components/category/category-read/category-read.component';
+import { CategoryUpdateComponent } from './components/category/category-update/category-update.component';
+import { CategoryComponent } from './views/category/category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +53,11 @@ import { HomeInfoComponent } from "./components/home/home-info/home-info.compone
     AuthenticationComponent,
     LoginComponent,
     HomeInfoComponent,
+    CategoryCreateComponent,
+    CategoryDeleteComponent,
+    CategoryReadComponent,
+    CategoryUpdateComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,

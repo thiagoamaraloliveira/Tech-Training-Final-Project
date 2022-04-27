@@ -8,4 +8,9 @@ export interface IDevice {
   createdAt?: Date;
   updatedAt?: Date;
   deletedAt?: Date;
+  Category?: CategoryOption;
+}
+
+export interface CategoryOption {
+  name: string;
 }

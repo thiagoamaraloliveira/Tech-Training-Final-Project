@@ -28,16 +28,8 @@
     <mat-form-field>
       <input
         matInput
-        placeholder="Usuário"
-        [(ngModel)]="device.userId"
-        name="userId"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
         placeholder="Categoria"
-        [(ngModel)]="device.categoryId"
+        [(ngModel)]="device.Category!.name"
         name="categoryId"
       />
     </mat-form-field>

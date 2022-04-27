@@ -15,6 +15,9 @@ export class DeviceUpdateComponent implements OnInit {
     partNumber: "",
     userId: null,
     categoryId: null,
+    Category: {
+      name: "",
+    },
   };
   constructor(
     private deviceService: DeviceService,

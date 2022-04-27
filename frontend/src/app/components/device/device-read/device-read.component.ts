@@ -23,7 +23,6 @@ export class DeviceReadComponent implements OnInit {
   ngOnInit(): void {
     this.deviceService.read().subscribe((devices) => {
       this.devices = devices;
-      console.log(devices);
     });
   }
 }

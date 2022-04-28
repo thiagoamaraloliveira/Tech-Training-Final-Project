@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { DeviceService } from "../../../services/device.service";
+import { CategoryService } from "../../../services/category.service";
 
 @Component({
   selector: "app-category-read",
@@ -9,11 +9,11 @@ import { DeviceService } from "../../../services/device.service";
 })
 export class CategoryReadComponent implements OnInit {
   categories: any[] = [];
-  displayedColums = ["id", "name"];
-  constructor(private deviceService: DeviceService) {}
+  displayedColums = ["id", "name", "action"];
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-    this.deviceService.read().subscribe((categories) => {
+    this.categoryService.read().subscribe((categories) => {
       this.categories = categories;
     });
   }

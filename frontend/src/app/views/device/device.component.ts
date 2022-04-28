@@ -11,7 +11,7 @@ export class DeviceComponent implements OnInit {
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
       title: "Cadastro de Dispositivos",
-      icon: "storefront",
+      icon: "devices",
       routeUrl: "/devices",
     };
   }

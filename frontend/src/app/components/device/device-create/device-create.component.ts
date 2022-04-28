@@ -19,6 +19,7 @@ export class DeviceCreateComponent implements OnInit {
   };
 
   categories: ICategoryOptions[] = [];
+  selectedOption: number | null = 0;
 
   constructor(private deviceService: DeviceService, private router: Router) {}
 
@@ -28,6 +29,11 @@ export class DeviceCreateComponent implements OnInit {
         this.categories.push({ name: category.name, id: category.id });
       });
     });
+    this.getUserId();
+  }
+
+  onChangeCategory(choosedCategory: any): void {
+    this.device = { ...this.device, categoryId: choosedCategory.value };
   }
 
   createDevice() {
@@ -39,5 +45,14 @@ export class DeviceCreateComponent implements OnInit {
 
   cancel() {
     this.router.navigateByUrl("/devices");
+  }
+
+  getUserId() {
+    var json = window.localStorage.getItem("user");
+    var user = !!json && JSON.parse(json);
+
+    if (user.id && user.token) {
+      this.device = { ...this.device, userId: user.id };
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { DeviceService } from "../../../services/device.service";
 import { Router } from "@angular/router";
 import { IDevice } from "../../../models/device.model";
+import { ICategoryOptions } from "src/app/models/category.model ";
 
 @Component({
   selector: "app-device-create",
@@ -17,9 +18,23 @@ export class DeviceCreateComponent implements OnInit {
     categoryId: null,
   };
 
+  categories: ICategoryOptions[] = [];
+  selectedOption: number | null = 0;
+
   constructor(private deviceService: DeviceService, private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.deviceService.readCategories().subscribe((categories) => {
+      categories.map((category) => {
+        this.categories.push({ name: category.name, id: category.id });
+      });
+    });
+    this.getUserId();
+  }
+
+  onChangeCategory(choosedCategory: any): void {
+    this.device = { ...this.device, categoryId: choosedCategory.value };
+  }
 
   createDevice() {
     this.deviceService.create(this.device).subscribe(() => {
@@ -30,5 +45,14 @@ export class DeviceCreateComponent implements OnInit {
 
   cancel() {
     this.router.navigateByUrl("/devices");
+  }
+
+  getUserId() {
+    var json = window.localStorage.getItem("user");
+    var user = !!json && JSON.parse(json);
+
+    if (user.id && user.token) {
+      this.device = { ...this.device, userId: user.id };
+    }
   }
 }

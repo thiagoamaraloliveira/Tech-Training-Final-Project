@@ -3,7 +3,7 @@ const deviceServices = new DevicesServices();
 class DeviceController {
   static async getAllDevices(req, res) {
     try {
-      const allDevices = await deviceServices.getAllRegisters();
+      const allDevices = await deviceServices.getAllDevices();
       return res.status(200).json(allDevices);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -13,7 +13,7 @@ class DeviceController {
   static async getDevice(req, res) {
     const { id } = req.params;
     try {
-      const device = await deviceServices.getOneRegister(id);
+      const device = await deviceServices.getOneDevice(id);
       return res.status(200).json(device);
     } catch (error) {
       return res.status(500).json(error.message);

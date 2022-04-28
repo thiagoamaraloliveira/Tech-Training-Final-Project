@@ -25,21 +25,18 @@
         name="partNumber"
       />
     </mat-form-field>
+
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Usuário"
-        [(ngModel)]="device.userId"
-        name="userId"
-      />
-    </mat-form-field>
-    <mat-form-field>
-      <input
-        matInput
-        placeholder="Categoria"
-        [(ngModel)]="device.categoryId"
-        name="categoryId"
-      />
+      <mat-label>Categoria</mat-label>
+      <mat-select
+        #choosedCategory
+        (valueChange)="onChangeCategory(choosedCategory)"
+        [(value)]="selectedOption"
+      >
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </form>
   <button mat-raised-button (click)="createDevice()" color="primary">

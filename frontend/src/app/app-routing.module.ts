@@ -10,6 +10,10 @@ import { AuthenticationComponent } from "./views/authentication/authentication.c
 import { AuthGuard } from "./views/authentication/auth.guard";
 import { LoginComponent } from "./components/login/login/login.component";
 import { HomeInfoComponent } from "./components/home/home-info/home-info.component";
+import { CategoryComponent } from "./views/category/category/category.component";
+import { CategoryCreateComponent } from "./components/category/category-create/category-create.component";
+import { CategoryUpdateComponent } from "./components/category/category-update/category-update.component";
+import { CategoryDeleteComponent } from "./components/category/category-delete/category-delete.component";
 
 const routes: Routes = [
   {
@@ -36,23 +40,39 @@ const routes: Routes = [
         path: "devices/delete/:id",
         component: DeviceDeleteComponent,
       },
+      {
+        path: "categories",
+        component: CategoryComponent,
+      },
+      {
+        path: "categories/create",
+        component: CategoryCreateComponent,
+      },
+      {
+        path: "categories/update/:id",
+        component: CategoryUpdateComponent,
+      },
+      {
+        path: "categories/delete/:id",
+        component: CategoryDeleteComponent,
+      },
     ],
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: "",
-    component:AuthenticationComponent ,
-    children:[
+    component: AuthenticationComponent,
+    children: [
       {
-        path:"",
+        path: "",
         redirectTo: "login",
-        pathMatch:"full"
+        pathMatch: "full",
       },
       {
-        path:"login",
-        component:LoginComponent
-      }
-    ]
+        path: "login",
+        component: LoginComponent,
+      },
+    ],
   },
 ];
 

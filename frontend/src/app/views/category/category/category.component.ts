@@ -3,21 +3,21 @@ import { Router } from "@angular/router";
 import { HeaderService } from "src/app/services/header.service";
 
 @Component({
-  selector: "app-device",
-  templateUrl: "./device.component.html",
-  styleUrls: ["./device.component.css"],
+  selector: "app-category",
+  templateUrl: "./category.component.html",
+  styleUrls: ["./category.component.css"],
 })
-export class DeviceComponent implements OnInit {
+export class CategoryComponent implements OnInit {
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
       title: "Cadastro de Dispositivos",
-      icon: "devices",
-      routeUrl: "/devices",
+      icon: "dehaze",
+      routeUrl: "/categories",
     };
   }
 
   ngOnInit(): void {}
-  navigateToDeviceCreate(): void {
-    this.router.navigateByUrl("/devices/create");
+  navigateToCategoriCreate(): void {
+    this.router.navigateByUrl("/categories/create");
   }
 }

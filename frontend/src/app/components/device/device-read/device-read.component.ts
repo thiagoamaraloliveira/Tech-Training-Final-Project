@@ -14,9 +14,8 @@ export class DeviceReadComponent implements OnInit {
     "name",
     "color",
     "partNumber",
-    "userId",
     "categoryId",
-    "action"
+    "action",
   ];
 
   constructor(private deviceService: DeviceService) {}
@@ -24,7 +23,6 @@ export class DeviceReadComponent implements OnInit {
   ngOnInit(): void {
     this.deviceService.read().subscribe((devices) => {
       this.devices = devices;
-      console.log(devices);
     });
   }
 }
